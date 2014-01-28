@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html><html>
+<head>
+<title>Main Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="generator" content="Wakanda GUIDesigner"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="wakanda-version" content="6 build 6.147688"/>
+	<meta name="wakanda-build" content="6.147688"/>
+	
+	
+
+	<meta name="WAF.catalog" content="*"/>	
+	
+	
+	
+
+	<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="Lead" data-lib="WAF" data-id="lead" data-dataType="string" data-autoLoad="false" content="lead"/>
+	<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="Contact" data-lib="WAF" data-id="contact" data-dataType="string" data-autoLoad="false" content="contact"/>
+	<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="Account" data-lib="WAF" data-id="account" data-dataType="string" data-autoLoad="false" content="account"/>
+	<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="Activity" data-lib="WAF" data-id="activity" data-dataType="string" data-autoLoad="false" content="activity"/>
+	
+	<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="object" data-source="signUpObj" data-lib="WAF" data-id="signUpObj" data-dataType="string" data-autoLoad="true" data-attributes="name:string,email:string,password:string,verifyPassword:string" content="signUpObj"/>
+			
+	
+	
+
+	<script type="text/x-handlebars-template" id="selected-transferred-list-template">
+		<li class="selectedTransferred">
+			<div data-id="{{dataId}}" class="selectedTransferredRow"> 
+				<div class="selectedTransferredColumn"><span class="strongName">{{fullName}}</span></div> 
+				<div class="selectedTransferredColumn">{{company}}</div>
+				<div class="selectedTransferredColumn">{{email}}</div>
+			</div>
+		</li>
+	</script>
+
+	<script type="text/x-handlebars-template" id="selected-people-list-template">
+		<li class="selectedPeople">
+			<div data-id="{{dataId}}" class="selectedPeopleRow"> 
+				<div class="selectedPeopleColumn"><span class="strongName">{{fullName}}</span></div> 
+				<div class="selectedPeopleColumn">{{company}}</div>
+				<div class="selectedPeopleColumn">{{email}}</div>
+				<div class="selectedPeopleColumn">{{owner}}</div>
+			</div>
+		</li>
+	</script>
+
+	<script type="text/x-handlebars-template" id="selected-leads-list-template">
+		<li class="selectedLeads">
+			<div data-id="{{dataId}}" class="selectedLeadRow"> 
+				<div class="selectedLeadColumn"><span class="strongName">{{fullName}}</span></div> 
+				<div class="selectedLeadColumn">{{company}}</div>
+				<div class="selectedLeadColumn">{{email}}</div>
+				<div class="selectedLeadColumn">{{owner}}</div>
+			</div>
+		</li>
+	</script>
+
+	<script type="text/x-handlebars-template" id="note-list-template">
+		<li class="notePreview">
+			<div data-id="{{dataId}}" class="noteIdent">{{title}} </div> 
+			<div>{{body}}</div>
+		</li>
+	</script>
+
+	<script type="text/x-handlebars-template" id="note-list-template2">
+		<li class="noteListItem">
+			<div data-id="{{dataId}}"><span class="noteIdent">{{title}}</span> {{date}}</div>
+			<div>{{body}}</div>
+		</li>
+	</script>
+
+		
+		<meta name="WAF.config.loadJS" id="waf-script" content="scripts/index.js"/>
+		<meta name="WAF.config.loadJS" content="/index.waPage/scripts/wak5CRMUtil.js"/>
+		<meta name="WAF.config.loadJS" content="/index.waPage/scripts/handlebars.js"/>
+		<meta name="WAF.config.loadJS" content="/jqPlot/jquery.jqplot.min.js"/>
+		<meta name="WAF.config.loadJS" content="/jqPlot/plugins/jqplot.pieRenderer.min.js"/>
+		<meta name="WAF.config.loadJS" content="/jqPlot/plugins/jqplot.barRenderer.min.js"/>
+		<meta name="WAF.config.loadJS" content="/jqPlot/plugins/jqplot.categoryAxisRenderer.min.js"/>
+		
+		
+		
+		
+		
+		<meta name="WAF.config.loadCSS" id="waf-interface-css" content="styles/index.css"/>
+		<meta name="WAF.config.loadCSS" id="waf-project-css" content="/application.css"/>
+		<meta name="WAF.config.loadCSS" content="/index.waPage/styles/custom.css"/>
+		<meta name="WAF.config.loadCSS" content="/jqPlot/jquery.jqplot.min.css"/>
+
+		<meta name="WAF.packageJson"/>
+</head>
+
+<body id="waf-body" data-workspace-width="0" data-workspace-orientation="portrait" data-workspace-height="0" data-viewport-width="device-width" data-viewport-minimum-scale="1.0" data-viewport-maximum-scale="1.0" data-viewport-initial-scale="1.0" data-type="document" data-theme="default" data-rpc-validation="false" data-rpc-namespace="rpc" data-rpc-activate="false" data-platform="desktop" data-lib="WAF" data-group="[]" data-entire-model="true" data-apple-meta-tags-status-bar="default" style="visibility:hidden;bottom:;right:;">
+		<div id="headerContainer" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" class="waf-widget waf-container waf-container-level-0 waf-level-0">
+	 	<div id="headerCenteredContainer" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-container waf-container-level-1 waf-level-1">
+ 	 		<div id="headerTitle" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText ">Wakanda 5 CRM Demo</div>
+ 	 		<div id="login2" data-user-label="User: " data-user-display="Signed in as " data-type="login" data-password-label="Password: " data-logout-action="Logout" data-login-title="Login Dialog" data-login-button="Login" data-login-action="Login" data-lib="WAF" data-constraint-top="true" data-constraint-right="true" data-constraint-left="false" data-constraint-bottom="false" class="waf-widget waf-login "></div>
+ 	 		<div id="messageContainer" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-hideonload="true" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-container waf-container-level-2 waf-level-2">
+	 	 	 	<div id="messageText" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText "></div>
+ 	 	 	</div>
+ 	 	</div>
+ 	</div>
+		<div id="mainContainer" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" data-constraint-bottom="true" class="waf-widget waf-container waf-container-level-0 waf-level-0">
+	 	<div id="mainCenteredContainer" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-container waf-container-level-1 waf-level-1">
+	 	 		<div id="mainComponent" data-type="component" data-path="/components/splashScreen.waComponent" data-lib="WAF" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-component "></div>
+ 	 		</div>
+ 			<div id="container1" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-container waf-container-level-1 waf-level-1"></div>
+ 	</div>
+		<script type="text/javascript" src="/waLib/WAF/Loader.js"></script>
+	</body>
+</html>
