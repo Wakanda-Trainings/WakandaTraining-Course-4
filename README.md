@@ -8,5 +8,4 @@ This course will cover how to bring a complete Wakanda application together. In 
 This course will cover how to bring a complete Wakanda application together. In this case, we are going to look at a typical CRM app built with Wakanda, and then build a smaller app called WakandaBook. 
 
 
-Retrieve the Wakanda training video there:
-https://wakanda.4d.com/wakanda/video/player_WKVT04.shtml
+[Watch the Training Video](https://wakanda.4d.com/wakanda/video/player_WKVT04.shtml)
