@@ -1,1 +1,1519 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><EntityModelCatalog><extraProperties ____objectunic="true" version="1"><classes ____objectunic="true"><User ____objectunic="true" panelColor="#70CCC2"><panel ____objectunic="true" isOpen="true" pathVisible="true"><position ____objectunic="true" X="65" Y="29"/></panel></User><Lead ____objectunic="true" panelColor="#B7DDE8"><panel ____objectunic="true" isOpen="true"><position ____objectunic="true" X="444" Y="35"/></panel></Lead><Contact ____objectunic="true" panelColor="#fff"><panel ____objectunic="true" isOpen="false"><position ____objectunic="true" X="405" Y="46"/></panel></Contact><Account ____objectunic="true" panelColor="#eee"><panel ____objectunic="true" isOpen="false"><position ____objectunic="true" X="692" Y="46"/></panel></Account><RecentItem ____objectunic="true" panelColor="#C3D69B"><panel ____objectunic="true" isOpen="false"><position ____objectunic="true" X="84" Y="63"/></panel></RecentItem><Activity ____objectunic="true" panelColor="#B2A2C7"><panel ____objectunic="true" isOpen="false"><position ____objectunic="true" X="88" Y="46"/></panel></Activity><Priority ____objectunic="true" panelColor="#C3D69B"><panel ____objectunic="true" isOpen="false"><position ____objectunic="true" X="25" Y="20"/></panel></Priority><Note ____objectunic="true" panelColor="#C3D69B"><panel ____objectunic="true" isOpen="false"><position ____objectunic="true" X="80" Y="78"/></panel></Note><Log ____objectunic="true" panelColor="#BFBFBF"><panel ____objectunic="true" isOpen="false"><position ____objectunic="true" X="469" Y="24"/></panel></Log></classes><model ____objectunic="true" scriptMode="manual" workspaceLeft="0" workspaceTop="0"/></extraProperties><dataClasses name="Account" className="Account" collectionName="Accounts" scope="public" noEdit="true" noSave="true"><attributes name="ID" kind="storage" scope="public" indexed="true" autosequence="true" type="long" indexKind="btree"/><attributes name="name" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"><events kind="onSet" from="model.Account.name.events.onSet" userDefined="true"/></attributes><attributes name="phone" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="billingStreet" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="billingCity" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="billingState" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="billingZip" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="billingCountry" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="shippingStreet" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="shippingCity" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="shippingState" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="shippingZip" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="shippingCountry" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="website" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="type" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="industry" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="annualRevenue" kind="storage" scope="public" indexed="true" type="number" indexKind="btree"/><attributes name="owner" kind="relatedEntity" scope="public" type="User" path="User"/><attributes name="activityCollection" kind="relatedEntities" scope="public" type="Activities" reversePath="true" path="account"/><attributes name="contactCollection" kind="relatedEntities" scope="public" type="Contacts" reversePath="true" path="account"/><attributes name="noteCollection" kind="relatedEntities" scope="public" type="Notes" reversePath="true" path="account"/><events kind="onInit" from="model.Account.events.onInit" userDefined="true"/><events kind="onRestrictingQuery" from="model.Account.events.onRestrictingQuery" userDefined="true"/><methods name="changeOwner" applyTo="entityCollection" scope="public" from="model.Account.collectionMethods.changeOwner" userDefined="true"/><methods name="collectionEcho" applyTo="entityCollection" scope="public" from="model.Account.collectionMethods.collectionEcho" userDefined="true"/><key name="ID"/></dataClasses><dataClasses name="Activity" className="Activity" collectionName="Activities" scope="public" noEdit="true" noSave="true"><attributes name="ID" kind="storage" scope="public" indexed="true" autosequence="true" type="long" indexKind="btree"/><attributes name="subject" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="due" kind="storage" scope="public" type="date" simpleDate="true"/><attributes name="dueDateString" kind="storage" scope="public" type="string"/><attributes name="status" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="priority" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="type" kind="storage" scope="public" type="string"/><attributes name="linkText" kind="calculated" scope="public" type="string" scriptKind="javascript"><onGet from="model.Activity.linkText.onGet" userDefined="true"/></attributes><attributes name="owner" kind="relatedEntity" scope="public" type="User" path="User"/><attributes name="contact" kind="relatedEntity" scope="public" type="Contact" path="Contact"/><attributes name="lead" kind="relatedEntity" scope="public" type="Lead" path="Lead"/><attributes name="account" kind="relatedEntity" scope="public" type="Account" path="Account"/><events kind="onInit" from="model.Activity.events.onInit" userDefined="true"/><key name="ID"/></dataClasses><dataClasses name="Contact" className="Contact" collectionName="Contacts" scope="public" noEdit="true" noSave="true"><attributes name="ID" kind="storage" scope="public" indexed="true" autosequence="true" type="long" indexKind="btree"/><attributes name="firstName" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"><events kind="onSet" from="model.Contact.firstName.events.onSet" userDefined="true"/></attributes><attributes name="lastName" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"><events kind="onSet" from="model.Contact.lastName.events.onSet" userDefined="true"/></attributes><attributes name="title" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="phone" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="fax" kind="storage" scope="public" type="string"/><attributes name="mobile" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="homePhone" kind="storage" scope="public" type="string"/><attributes name="leadSource" kind="storage" scope="public" type="string"/><attributes name="emailAccnt" kind="storage" scope="public" type="string"/><attributes name="skypeAccnt" kind="storage" scope="public" type="string"/><attributes name="assistant" kind="storage" scope="public" type="string"/><attributes name="reportsTo" kind="storage" scope="public" type="string"/><attributes name="street" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="city" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="state" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="zip" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="country" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="shippingStreet" kind="storage" scope="public" type="string"/><attributes name="shippingCity" kind="storage" scope="public" type="string"/><attributes name="shippingState" kind="storage" scope="public" type="string"/><attributes name="shippingZip" kind="storage" scope="public" type="string"/><attributes name="shippingCountry" kind="storage" scope="public" type="string"/><attributes name="company" kind="storage" scope="public" type="string"/><attributes name="fullName" kind="calculated" scope="public" type="string" scriptKind="javascript"><onGet from="model.Contact.fullName.onGet" userDefined="true"/></attributes><attributes name="owner" kind="relatedEntity" scope="public" type="User" path="User"/><attributes name="activityCollection" kind="relatedEntities" scope="public" type="Activities" reversePath="true" path="contact"/><attributes name="account" kind="relatedEntity" scope="public" type="Account" path="Account"/><attributes name="noteCollection" kind="relatedEntities" scope="public" type="Notes" reversePath="true" path="contact"/><events kind="onInit" from="model.Contact.events.onInit" userDefined="true"/><events kind="onRestrictingQuery" from="model.Contact.events.onRestrictingQuery" userDefined="true"/><methods name="changeOwner" applyTo="entityCollection" scope="public" from="model.Contact.collectionMethods.changeOwner" userDefined="true"/><methods name="collectionEcho" applyTo="entityCollection" scope="public" from="model.Contact.collectionMethods.collectionEcho" userDefined="true"/><key name="ID"/></dataClasses><dataClasses name="Lead" className="Lead" collectionName="Leads" scope="public" noEdit="true" noSave="true"><attributes name="ID" kind="storage" scope="public" indexed="true" autosequence="true" type="long" indexKind="btree"/><attributes name="firstName" kind="storage" scope="public" type="string"><events kind="onSet" from="model.Lead.firstName.events.onSet" userDefined="true"/></attributes><attributes name="lastName" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"><events kind="onSet" from="model.Lead.lastName.events.onSet" userDefined="true"/></attributes><attributes name="fullName" kind="calculated" scope="public" type="string" scriptKind="javascript"><onGet from="model.Lead.fullName.onGet" userDefined="true"/></attributes><attributes name="avatar" kind="storage" scope="public" type="image"/><attributes name="title" kind="storage" scope="public" type="string"/><attributes name="phone" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="fax" kind="storage" scope="public" type="string"/><attributes name="mobile" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="homePhone" kind="storage" scope="public" type="string"/><attributes name="emailAccnt" kind="storage" scope="public" type="string"/><attributes name="skypeAccnt" kind="storage" scope="public" type="string"/><attributes name="street" kind="storage" scope="public" type="string"/><attributes name="city" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="state" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="zip" kind="storage" scope="public" type="string"/><attributes name="country" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="company" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="converted" kind="storage" scope="public" indexed="true" type="bool" indexKind="cluster"/><attributes name="convertedDate" kind="storage" scope="public" type="date" simpleDate="true"/><attributes name="changeOwnerAck" kind="storage" scope="public" indexed="true" type="bool" indexKind="cluster"/><attributes name="changeOwnerFlag" kind="storage" scope="public" indexed="true" type="bool" indexKind="cluster"/><attributes name="leadEntityState" kind="storage" scope="public" type="string"/><attributes name="leadSource" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="industry" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="annualRevenue" kind="storage" scope="public" indexed="true" type="number" indexKind="btree"/><attributes name="leadStatus" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="rating" kind="storage" scope="public" type="long"/><attributes name="owner" kind="relatedEntity" scope="public" type="User" path="User"/><attributes name="convertedContact" kind="relatedEntity" scope="public" type="Contact" path="Contact"/><attributes name="convertedAcct" kind="relatedEntity" scope="public" type="Account" path="Account"/><attributes name="activityCollection" kind="relatedEntities" scope="public" type="Activities" reversePath="true" path="lead"/><attributes name="noteCollection" kind="relatedEntities" scope="public" type="Notes" reversePath="true" path="lead"/><events kind="onInit" from="model.Lead.events.onInit" userDefined="true"/><events kind="onValidate" from="model.Lead.events.onValidate" userDefined="true"/><events kind="onRestrictingQuery" from="model.Lead.events.onRestrictingQuery" userDefined="true"/><methods name="changeOwner" applyTo="entityCollection" scope="public" from="model.Lead.collectionMethods.changeOwner" userDefined="true"/><methods name="changeOwnerAcknowledgement" applyTo="entityCollection" scope="public" from="model.Lead.collectionMethods.changeOwnerAcknowledgement" userDefined="true"/><methods name="collectionEcho" applyTo="entityCollection" scope="public" from="model.Lead.collectionMethods.collectionEcho" userDefined="true"/><methods name="convertLead" applyTo="entity" scope="public" from="model.Lead.entityMethods.convertLead" userDefined="true"/><methods name="createNewLead" applyTo="dataClass" scope="public" from="model.Lead.methods.createNewLead" userDefined="true"/><methods name="jqPlotLeadStatus" applyTo="entityCollection" scope="public" from="model.Lead.collectionMethods.jqPlotLeadStatus" userDefined="true"/><methods name="userDataTest" applyTo="dataClass" scope="public" from="model.Lead.methods.userDataTest" userDefined="true"/><key name="ID"/></dataClasses><dataClasses name="Log" className="Log" collectionName="Logs" scope="public" noEdit="true" noSave="true"><attributes name="ID" kind="storage" scope="public" indexed="true" autosequence="true" type="long" indexKind="btree"/><attributes name="dataClassName" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="entityName" kind="storage" scope="public" type="string"/><attributes name="changedBy" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="changeDate" kind="storage" scope="public" type="date" simpleDate="true"/><attributes name="from" kind="storage" scope="public" type="string"/><key name="ID"/></dataClasses><dataClasses name="Note" className="Note" collectionName="Notes" scope="public" noEdit="true" noSave="true"><attributes name="ID" kind="storage" scope="public" indexed="true" autosequence="true" type="long" indexKind="btree"/><attributes name="title" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="body" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="createDate" kind="storage" scope="public" type="date" simpleDate="true"/><attributes name="owner" kind="relatedEntity" scope="public" type="User" path="User"/><attributes name="contact" kind="relatedEntity" scope="public" type="Contact" path="Contact"/><attributes name="lead" kind="relatedEntity" scope="public" type="Lead" path="Lead"/><attributes name="account" kind="relatedEntity" scope="public" type="Account" path="Account"/><key name="ID"/></dataClasses><dataClasses name="RecentItem" className="RecentItem" collectionName="RecentItems" scope="public" noEdit="true" noSave="true"><attributes name="ID" kind="storage" scope="public" indexed="true" autosequence="true" type="long" indexKind="btree"/><attributes name="dataClassName" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="entityKey" kind="storage" scope="public" indexed="true" type="long" indexKind="btree"/><attributes name="sortOrder" kind="storage" scope="public" indexed="true" type="long" indexKind="btree"/><attributes name="title" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="converted" kind="storage" scope="public" indexed="true" type="bool" indexKind="cluster"/><attributes name="owner" kind="relatedEntity" scope="public" type="User" path="User"/><events kind="onInit" from="model.RecentItem.events.onInit" userDefined="true"/><events kind="onRestrictingQuery" from="model.RecentItem.events.onRestrictingQuery" userDefined="true"/><methods name="newRecentItem" applyTo="dataClass" scope="public" from="model.RecentItem.methods.newRecentItem" userDefined="true"/><methods name="removeOldRecentItems" applyTo="dataClass" scope="publicOnServer" from="model.RecentItem.methods.removeOldRecentItems" userDefined="true"/><methods name="reorderItems" applyTo="dataClass" scope="publicOnServer" from="model.RecentItem.methods.reorderItems" userDefined="true"/><key name="ID"/></dataClasses><dataClasses name="User" className="User" collectionName="Users" scope="public" noEdit="true" noSave="true"><attributes name="ID" kind="storage" scope="public" indexed="true" autogenerate="true" type="uuid" indexKind="btree"/><attributes name="email" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="password" kind="calculated" scope="public" type="string" scriptKind="javascript"><onGet from="model.User.password.onGet" userDefined="true"/><onSet from="model.User.password.onSet" userDefined="true"/></attributes><attributes name="HA1Key" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="role" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="fullName" kind="storage" scope="public" indexed="true" type="string" indexKind="btree"/><attributes name="leadCollection" kind="relatedEntities" scope="public" type="Leads" reversePath="true" path="owner"/><attributes name="contactCollection" kind="relatedEntities" scope="public" type="Contacts" reversePath="true" path="owner"/><attributes name="accountCollection" kind="relatedEntities" scope="public" type="Accounts" reversePath="true" path="owner"/><attributes name="recentItemCollection" kind="relatedEntities" scope="public" type="RecentItems" reversePath="true" path="owner"/><events kind="onValidate" from="model.User.events.onValidate" userDefined="true"/><methods name="addUser" applyTo="dataClass" scope="public" from="model.User.methods.addUser" userDefined="true"/><methods name="getOtherUsers" applyTo="dataClass" scope="public" from="model.User.methods.getOtherUsers" userDefined="true"/><methods name="sendMail" applyTo="dataClass" scope="public" from="model.User.methods.sendMail" userDefined="true"/><methods name="validatePassword" applyTo="entity" scope="publicOnServer" from="model.User.entityMethods.validatePassword" userDefined="true"/><key name="ID"/></dataClasses></EntityModelCatalog>
+
+{
+	"extraProperties" : 
+	{
+		"version" : "2",
+		"__CDATA" : "\n\t\t\n\t\t\n\t",
+		"classes" : 
+		{
+			"__CDATA" : "\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t",
+			"User" : 
+			{
+				"panelColor" : "#70CCC2",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : "true",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : "65",
+						"Y" : "29"
+					}
+				}
+			},
+			"Lead" : 
+			{
+				"panelColor" : "#B7DDE8",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : "444",
+						"Y" : "35"
+					}
+				}
+			},
+			"Contact" : 
+			{
+				"panelColor" : "#fff",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "false",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : "405",
+						"Y" : "46"
+					}
+				}
+			},
+			"Account" : 
+			{
+				"panelColor" : "#eee",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "false",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : "692",
+						"Y" : "46"
+					}
+				}
+			},
+			"RecentItem" : 
+			{
+				"panelColor" : "#C3D69B",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "false",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : "84",
+						"Y" : "63"
+					}
+				}
+			},
+			"Activity" : 
+			{
+				"panelColor" : "#B2A2C7",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "false",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : "88",
+						"Y" : "46"
+					}
+				}
+			},
+			"Priority" : 
+			{
+				"panelColor" : "#C3D69B",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "false",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : "25",
+						"Y" : "20"
+					}
+				}
+			},
+			"Note" : 
+			{
+				"panelColor" : "#C3D69B",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "false",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : "80",
+						"Y" : "78"
+					}
+				}
+			},
+			"Log" : 
+			{
+				"panelColor" : "#BFBFBF",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "false",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : "469",
+						"Y" : "24"
+					}
+				}
+			}
+		},
+		"model" : 
+		{
+			"scriptMode" : "manual",
+			"workspaceLeft" : "0",
+			"workspaceTop" : "0"
+		}
+	},
+	"dataClasses" : 
+	[
+		{
+			"name" : "Account",
+			"className" : "Account",
+			"collectionName" : "Accounts",
+			"scope" : "public",
+			"noEdit" : true,
+			"noSave" : true,
+			"attributes" : 
+			[
+				{
+					"name" : "activityCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Activities",
+					"reversePath" : true,
+					"path" : "account"
+				},
+				{
+					"name" : "annualRevenue",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "number",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "billingCity",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "billingCountry",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "billingState",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "billingStreet",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "billingZip",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "contactCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Contacts",
+					"reversePath" : true,
+					"path" : "account"
+				},
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "industry",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "name",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree",
+					"events" : 
+					[
+						{
+							"kind" : "onSet",
+							"from" : "model.Account.name.events.onSet",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "noteCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Notes",
+					"reversePath" : true,
+					"path" : "account"
+				},
+				{
+					"name" : "owner",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "User",
+					"path" : "User"
+				},
+				{
+					"name" : "phone",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "shippingCity",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "shippingCountry",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "shippingState",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "shippingStreet",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "shippingZip",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "type",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "website",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "onInit",
+					"from" : "model.Account.events.onInit",
+					"userDefined" : true
+				},
+				{
+					"kind" : "onRestrictingQuery",
+					"from" : "model.Account.events.onRestrictingQuery",
+					"userDefined" : true
+				}
+			],
+			"methods" : 
+			[
+				{
+					"name" : "changeOwner",
+					"applyTo" : "entityCollection",
+					"scope" : "public",
+					"from" : "model.Account.collectionMethods.changeOwner",
+					"userDefined" : true
+				},
+				{
+					"name" : "collectionEcho",
+					"applyTo" : "entityCollection",
+					"scope" : "public",
+					"from" : "model.Account.collectionMethods.collectionEcho",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Activity",
+			"className" : "Activity",
+			"collectionName" : "Activities",
+			"scope" : "public",
+			"noEdit" : true,
+			"noSave" : true,
+			"attributes" : 
+			[
+				{
+					"name" : "account",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Account",
+					"path" : "Account"
+				},
+				{
+					"name" : "contact",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Contact",
+					"path" : "Contact"
+				},
+				{
+					"name" : "due",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : true
+				},
+				{
+					"name" : "dueDateString",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "lead",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Lead",
+					"path" : "Lead"
+				},
+				{
+					"name" : "linkText",
+					"kind" : "calculated",
+					"scope" : "public",
+					"type" : "string",
+					"scriptKind" : "javascript",
+					"onGet" : 
+					[
+						{
+							"from" : "model.Activity.linkText.onGet",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "owner",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "User",
+					"path" : "User"
+				},
+				{
+					"name" : "priority",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "status",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "subject",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "type",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "onInit",
+					"from" : "model.Activity.events.onInit",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Contact",
+			"className" : "Contact",
+			"collectionName" : "Contacts",
+			"scope" : "public",
+			"noEdit" : true,
+			"noSave" : true,
+			"attributes" : 
+			[
+				{
+					"name" : "account",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Account",
+					"path" : "Account"
+				},
+				{
+					"name" : "activityCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Activities",
+					"reversePath" : true,
+					"path" : "contact"
+				},
+				{
+					"name" : "assistant",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "city",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "company",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "country",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "emailAccnt",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "fax",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "firstName",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree",
+					"events" : 
+					[
+						{
+							"kind" : "onSet",
+							"from" : "model.Contact.firstName.events.onSet",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "fullName",
+					"kind" : "calculated",
+					"scope" : "public",
+					"type" : "string",
+					"scriptKind" : "javascript",
+					"onGet" : 
+					[
+						{
+							"from" : "model.Contact.fullName.onGet",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "homePhone",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "lastName",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree",
+					"events" : 
+					[
+						{
+							"kind" : "onSet",
+							"from" : "model.Contact.lastName.events.onSet",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "leadSource",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "mobile",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "noteCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Notes",
+					"reversePath" : true,
+					"path" : "contact"
+				},
+				{
+					"name" : "owner",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "User",
+					"path" : "User"
+				},
+				{
+					"name" : "phone",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "reportsTo",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "shippingCity",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "shippingCountry",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "shippingState",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "shippingStreet",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "shippingZip",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "skypeAccnt",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "state",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "street",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "title",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "zip",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "onInit",
+					"from" : "model.Contact.events.onInit",
+					"userDefined" : true
+				},
+				{
+					"kind" : "onRestrictingQuery",
+					"from" : "model.Contact.events.onRestrictingQuery",
+					"userDefined" : true
+				}
+			],
+			"methods" : 
+			[
+				{
+					"name" : "changeOwner",
+					"applyTo" : "entityCollection",
+					"scope" : "public",
+					"from" : "model.Contact.collectionMethods.changeOwner",
+					"userDefined" : true
+				},
+				{
+					"name" : "collectionEcho",
+					"applyTo" : "entityCollection",
+					"scope" : "public",
+					"from" : "model.Contact.collectionMethods.collectionEcho",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Lead",
+			"className" : "Lead",
+			"collectionName" : "Leads",
+			"scope" : "public",
+			"noEdit" : true,
+			"noSave" : true,
+			"attributes" : 
+			[
+				{
+					"name" : "activityCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Activities",
+					"reversePath" : true,
+					"path" : "lead"
+				},
+				{
+					"name" : "annualRevenue",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "number",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "avatar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "image"
+				},
+				{
+					"name" : "changeOwnerAck",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "bool",
+					"indexKind" : "cluster"
+				},
+				{
+					"name" : "changeOwnerFlag",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "bool",
+					"indexKind" : "cluster"
+				},
+				{
+					"name" : "city",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "company",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "converted",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "bool",
+					"indexKind" : "cluster"
+				},
+				{
+					"name" : "convertedAcct",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Account",
+					"path" : "Account"
+				},
+				{
+					"name" : "convertedContact",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Contact",
+					"path" : "Contact"
+				},
+				{
+					"name" : "convertedDate",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : true
+				},
+				{
+					"name" : "country",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "emailAccnt",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "fax",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "firstName",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string",
+					"events" : 
+					[
+						{
+							"kind" : "onSet",
+							"from" : "model.Lead.firstName.events.onSet",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "fullName",
+					"kind" : "calculated",
+					"scope" : "public",
+					"type" : "string",
+					"scriptKind" : "javascript",
+					"onGet" : 
+					[
+						{
+							"from" : "model.Lead.fullName.onGet",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "homePhone",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "industry",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "lastName",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree",
+					"events" : 
+					[
+						{
+							"kind" : "onSet",
+							"from" : "model.Lead.lastName.events.onSet",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "leadEntityState",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "leadSource",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "leadStatus",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "mobile",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "noteCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Notes",
+					"reversePath" : true,
+					"path" : "lead"
+				},
+				{
+					"name" : "owner",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "User",
+					"path" : "User"
+				},
+				{
+					"name" : "phone",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "rating",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "skypeAccnt",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "state",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "street",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "title",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "zip",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "onInit",
+					"from" : "model.Lead.events.onInit",
+					"userDefined" : true
+				},
+				{
+					"kind" : "onValidate",
+					"from" : "model.Lead.events.onValidate",
+					"userDefined" : true
+				},
+				{
+					"kind" : "onRestrictingQuery",
+					"from" : "model.Lead.events.onRestrictingQuery",
+					"userDefined" : true
+				}
+			],
+			"methods" : 
+			[
+				{
+					"name" : "changeOwner",
+					"applyTo" : "entityCollection",
+					"scope" : "public",
+					"from" : "model.Lead.collectionMethods.changeOwner",
+					"userDefined" : true
+				},
+				{
+					"name" : "changeOwnerAcknowledgement",
+					"applyTo" : "entityCollection",
+					"scope" : "public",
+					"from" : "model.Lead.collectionMethods.changeOwnerAcknowledgement",
+					"userDefined" : true
+				},
+				{
+					"name" : "collectionEcho",
+					"applyTo" : "entityCollection",
+					"scope" : "public",
+					"from" : "model.Lead.collectionMethods.collectionEcho",
+					"userDefined" : true
+				},
+				{
+					"name" : "convertLead",
+					"applyTo" : "entity",
+					"scope" : "public",
+					"from" : "model.Lead.entityMethods.convertLead",
+					"userDefined" : true
+				},
+				{
+					"name" : "createNewLead",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "model.Lead.methods.createNewLead",
+					"userDefined" : true
+				},
+				{
+					"name" : "jqPlotLeadStatus",
+					"applyTo" : "entityCollection",
+					"scope" : "public",
+					"from" : "model.Lead.collectionMethods.jqPlotLeadStatus",
+					"userDefined" : true
+				},
+				{
+					"name" : "userDataTest",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "model.Lead.methods.userDataTest",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Log",
+			"className" : "Log",
+			"collectionName" : "Logs",
+			"scope" : "public",
+			"noEdit" : true,
+			"noSave" : true,
+			"attributes" : 
+			[
+				{
+					"name" : "changeDate",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : true
+				},
+				{
+					"name" : "changedBy",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "dataClassName",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "entityName",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "from",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Note",
+			"className" : "Note",
+			"collectionName" : "Notes",
+			"scope" : "public",
+			"noEdit" : true,
+			"noSave" : true,
+			"attributes" : 
+			[
+				{
+					"name" : "account",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Account",
+					"path" : "Account"
+				},
+				{
+					"name" : "body",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "contact",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Contact",
+					"path" : "Contact"
+				},
+				{
+					"name" : "createDate",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : true
+				},
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "lead",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Lead",
+					"path" : "Lead"
+				},
+				{
+					"name" : "owner",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "User",
+					"path" : "User"
+				},
+				{
+					"name" : "title",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "RecentItem",
+			"className" : "RecentItem",
+			"collectionName" : "RecentItems",
+			"scope" : "public",
+			"noEdit" : true,
+			"noSave" : true,
+			"attributes" : 
+			[
+				{
+					"name" : "converted",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "bool",
+					"indexKind" : "cluster"
+				},
+				{
+					"name" : "dataClassName",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "entityKey",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "owner",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "User",
+					"path" : "User"
+				},
+				{
+					"name" : "sortOrder",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "title",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "onInit",
+					"from" : "model.RecentItem.events.onInit",
+					"userDefined" : true
+				},
+				{
+					"kind" : "onRestrictingQuery",
+					"from" : "model.RecentItem.events.onRestrictingQuery",
+					"userDefined" : true
+				}
+			],
+			"methods" : 
+			[
+				{
+					"name" : "newRecentItem",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "model.RecentItem.methods.newRecentItem",
+					"userDefined" : true
+				},
+				{
+					"name" : "removeOldRecentItems",
+					"applyTo" : "dataClass",
+					"scope" : "publicOnServer",
+					"from" : "model.RecentItem.methods.removeOldRecentItems",
+					"userDefined" : true
+				},
+				{
+					"name" : "reorderItems",
+					"applyTo" : "dataClass",
+					"scope" : "publicOnServer",
+					"from" : "model.RecentItem.methods.reorderItems",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "User",
+			"className" : "User",
+			"collectionName" : "Users",
+			"scope" : "public",
+			"noEdit" : true,
+			"noSave" : true,
+			"attributes" : 
+			[
+				{
+					"name" : "accountCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Accounts",
+					"reversePath" : true,
+					"path" : "owner"
+				},
+				{
+					"name" : "contactCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Contacts",
+					"reversePath" : true,
+					"path" : "owner"
+				},
+				{
+					"name" : "email",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "fullName",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "HA1Key",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autogenerate" : true,
+					"type" : "uuid",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "leadCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "Leads",
+					"reversePath" : true,
+					"path" : "owner"
+				},
+				{
+					"name" : "password",
+					"kind" : "calculated",
+					"scope" : "public",
+					"type" : "string",
+					"scriptKind" : "javascript",
+					"onGet" : 
+					[
+						{
+							"from" : "model.User.password.onGet",
+							"userDefined" : true
+						}
+					],
+					"onSet" : 
+					[
+						{
+							"from" : "model.User.password.onSet",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "recentItemCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "RecentItems",
+					"reversePath" : true,
+					"path" : "owner"
+				},
+				{
+					"name" : "role",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"type" : "string",
+					"indexKind" : "btree"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "onValidate",
+					"from" : "model.User.events.onValidate",
+					"userDefined" : true
+				}
+			],
+			"methods" : 
+			[
+				{
+					"name" : "addUser",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "model.User.methods.addUser",
+					"userDefined" : true
+				},
+				{
+					"name" : "getOtherUsers",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "model.User.methods.getOtherUsers",
+					"userDefined" : true
+				},
+				{
+					"name" : "sendMail",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "model.User.methods.sendMail",
+					"userDefined" : true
+				},
+				{
+					"name" : "validatePassword",
+					"applyTo" : "entity",
+					"scope" : "publicOnServer",
+					"from" : "model.User.entityMethods.validatePassword",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		}
+	]
+}
